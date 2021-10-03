@@ -31,4 +31,28 @@ public class BaseballNumber {
 		}
 		return baseballNumbers;
 	}
+
+	public BaseballResult checkBaseballNumbers(BaseballNumber playerBaseballNumbers) {
+		BaseballResult baseballResult = new BaseballResult();
+		for (int i = 0; i < playerBaseballNumbers.baseballNumbers.size(); i++) {
+			baseballResult.plusStrike(checkStrike(playerBaseballNumbers.baseballNumbers, i));
+			baseballResult.plusBall(checkBall(playerBaseballNumbers.baseballNumbers, i));
+		}
+		return baseballResult;
+	}
+
+	private int checkStrike(List<Integer> playerBaseballNumbers, int index) {
+		if (baseballNumbers.get(index).equals(playerBaseballNumbers.get(index))) {
+			return 1;
+		}
+		return 0;
+	}
+
+	private int checkBall(List<Integer> playerBaseballNumbers, int index) {
+		if (baseballNumbers.contains(playerBaseballNumbers.get(index))
+			&& !baseballNumbers.get(index).equals(playerBaseballNumbers.get(index))) {
+			return 1;
+		}
+		return 0;
+	}
 }

@@ -1,6 +1,7 @@
 package baseball.domain;
 
 import static org.assertj.core.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Arrays;
 
@@ -87,5 +88,28 @@ class BaseballNumberTest {
 		assertThatThrownBy(() -> BaseballNumber.create("022"))
 			.isInstanceOf(IllegalArgumentException.class)
 			.hasMessageContaining(VALIDATE_NUMBER_MESSAGE);
+	}
+
+	@DisplayName("상대방의 숫자와 플레이어의 숫자를 비교 - 3 strike")
+	@Test
+	void checkBaseballNumbers_three_strike() {
+		BaseballNumber baseballNumber = BaseballNumber.create(Arrays.asList(1, 2, 3));
+		BaseballNumber playerBaseballNumber = BaseballNumber.create("123");
+
+		BaseballResult baseballResult = baseballNumber.checkBaseballNumbers(playerBaseballNumber);
+		assertThat(baseballResult).extracting("strike").isEqualTo(3);
+		assertTrue(baseballResult.isPerfect());
+	}
+
+	@DisplayName("상대방의 숫자와 플레이어의 숫자를 비교 - 1 strike 1 ball")
+	@Test
+	void checkBaseballNumbers_one_strike_one_ball() {
+		BaseballNumber baseballNumber = BaseballNumber.create(Arrays.asList(1, 2, 3));
+		BaseballNumber playerBaseballNumber = BaseballNumber.create("135");
+
+		BaseballResult baseballResult = baseballNumber.checkBaseballNumbers(playerBaseballNumber);
+		assertThat(baseballResult).extracting("strike").isEqualTo(1);
+		assertThat(baseballResult).extracting("ball").isEqualTo(1);
+		assertFalse(baseballResult.isPerfect());
 	}
 }
