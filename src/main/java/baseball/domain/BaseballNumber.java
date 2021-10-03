@@ -16,10 +16,14 @@ public class BaseballNumber {
 
 	private final List<Integer> baseballNumbers;
 
-	public BaseballNumber(List<Integer> baseballNumbers) {
+	private BaseballNumber(List<Integer> baseballNumbers) {
 		validateNumbersSize(baseballNumbers);
 		validateNumbersDuplicate(baseballNumbers);
 		this.baseballNumbers = baseballNumbers;
+	}
+
+	public static BaseballNumber create(List<Integer> baseballNumbers) {
+		return new BaseballNumber(baseballNumbers);
 	}
 
 	public static BaseballNumber create(String numbers) {
