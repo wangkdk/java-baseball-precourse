@@ -4,6 +4,7 @@ import baseball.domain.BaseballNumber;
 import baseball.domain.BaseballNumberGenerator;
 import baseball.domain.BaseballResult;
 import baseball.view.BaseballInputView;
+import baseball.view.BaseballRestartView;
 import baseball.view.BaseballResultView;
 
 public class BaseballController {
@@ -17,5 +18,12 @@ public class BaseballController {
 			BaseballResultView.printMatchResult(matchResult);
 			isAnswer = matchResult.isPerfect();
 		} while (!isAnswer);
+		reStart();
+	}
+
+	public static void reStart() {
+		if (BaseballRestartView.selectRestart()) {
+			start();
+		}
 	}
 }
