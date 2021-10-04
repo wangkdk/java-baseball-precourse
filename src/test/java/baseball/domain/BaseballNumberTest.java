@@ -96,7 +96,7 @@ class BaseballNumberTest {
 		BaseballNumber baseballNumber = BaseballNumber.create(Arrays.asList(1, 2, 3));
 		BaseballNumber playerBaseballNumber = BaseballNumber.create("123");
 
-		BaseballResult baseballResult = baseballNumber.checkBaseballNumbers(playerBaseballNumber);
+		BaseballResult baseballResult = baseballNumber.match(playerBaseballNumber);
 		assertThat(baseballResult).extracting("strike").isEqualTo(3);
 		assertTrue(baseballResult.isPerfect());
 	}
@@ -107,7 +107,7 @@ class BaseballNumberTest {
 		BaseballNumber baseballNumber = BaseballNumber.create(Arrays.asList(1, 2, 3));
 		BaseballNumber playerBaseballNumber = BaseballNumber.create("135");
 
-		BaseballResult baseballResult = baseballNumber.checkBaseballNumbers(playerBaseballNumber);
+		BaseballResult baseballResult = baseballNumber.match(playerBaseballNumber);
 		assertThat(baseballResult).extracting("strike").isEqualTo(1);
 		assertThat(baseballResult).extracting("ball").isEqualTo(1);
 		assertFalse(baseballResult.isPerfect());

@@ -32,7 +32,7 @@ public class BaseballNumber {
 		return baseballNumbers;
 	}
 
-	public BaseballResult checkBaseballNumbers(BaseballNumber playerBaseballNumbers) {
+	public BaseballResult match(BaseballNumber playerBaseballNumbers) {
 		BaseballResult baseballResult = new BaseballResult();
 		for (int i = 0; i < playerBaseballNumbers.baseballNumbers.size(); i++) {
 			baseballResult.plusStrike(checkStrike(playerBaseballNumbers.baseballNumbers, i));
