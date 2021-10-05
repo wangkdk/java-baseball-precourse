@@ -8,7 +8,6 @@ import baseball.view.BaseballRestartView;
 import baseball.view.BaseballResultView;
 
 public class BaseballController {
-
 	public static void start() {
 		BaseballNumber baseballNumber = BaseballNumber.create(BaseballNumberGenerator.generateNonDuplicateNumbers());
 		boolean isAnswer;

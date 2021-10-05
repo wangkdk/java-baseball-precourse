@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BaseballNumber {
-
 	private final List<Integer> baseballNumbers;
 
 	private BaseballNumber(List<Integer> baseballNumbers) {

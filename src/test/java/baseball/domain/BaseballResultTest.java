@@ -7,7 +7,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class BaseballResultTest {
-
 	private final static String PERFECT_MESSAGE = "3개의 숫자를 모두 맞히셨습니다! 게임 끝";
 	private final static String STRIKE_MESSAGE = "스트라이크 ";
 	private final static String BALL_MESSAGE = "볼";

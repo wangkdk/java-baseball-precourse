@@ -8,7 +8,6 @@ import java.util.Set;
 import nextstep.utils.Randoms;
 
 public class BaseballNumberGenerator {
-
 	private static final int BASEBALL_NUMBERS_SIZE = 3;
 	private static final int BASEBALL_NUMBER_MIN = 1;
 	private static final int BASEBALL_NUMBER_MAX = 9;

@@ -6,7 +6,6 @@ import java.util.Set;
 import java.util.regex.Pattern;
 
 public class BaseballNumberValidator {
-
 	private static final int BASEBALL_NUMBERS_SIZE = 3;
 	private static final String VALIDATE_SIZE_MESSAGE = "[ERROR] 야구 게임 숫자는 3개만 가능합니다.";
 	private static final String VALIDATE_DUPLICATE_MESSAGE = "[ERROR] 야구 게임 숫자는 중복될 수 없습니다.";

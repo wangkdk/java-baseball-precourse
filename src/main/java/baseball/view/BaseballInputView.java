@@ -4,7 +4,6 @@ import baseball.domain.BaseballNumber;
 import nextstep.utils.Console;
 
 public class BaseballInputView {
-
 	private final static String INPUT_NUMBER_MESSAGE = "숫자를 입력해주세요: ";
 
 	public static BaseballNumber inputBaseballNumber() {

@@ -14,7 +14,6 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 public class StringTest {
-
 	private final String COMMA = ",";
 	private Set<Integer> numbers;
 
@@ -98,5 +97,4 @@ public class StringTest {
 	void checkSetContainsTest_differentResult(int input, boolean expected) {
 		assertEquals(expected, numbers.contains(input));
 	}
-
 }
