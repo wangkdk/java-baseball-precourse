@@ -8,21 +8,21 @@ import baseball.view.BaseballRestartView;
 import baseball.view.BaseballResultView;
 
 public class BaseballController {
-	public void start() {
-		BaseballNumber baseballNumber = BaseballNumber.create(BaseballNumberGenerator.generateNonDuplicateNumbers());
-		boolean isAnswer;
-		do {
-			BaseballNumber playerBaseballNumber = BaseballInputView.inputBaseballNumber();
-			BaseballResult matchResult = baseballNumber.match(playerBaseballNumber);
-			BaseballResultView.printMatchResult(matchResult);
-			isAnswer = matchResult.isPerfect();
-		} while (!isAnswer);
-		reStart();
-	}
+    public void start() {
+        BaseballNumber baseballNumber = BaseballNumber.create(BaseballNumberGenerator.generateNonDuplicateNumbers());
+        boolean isAnswer;
+        do {
+            BaseballNumber playerBaseballNumber = BaseballInputView.inputBaseballNumber();
+            BaseballResult matchResult = baseballNumber.match(playerBaseballNumber);
+            BaseballResultView.printMatchResult(matchResult);
+            isAnswer = matchResult.isPerfect();
+        } while (!isAnswer);
+        reStart();
+    }
 
-	public void reStart() {
-		if (BaseballRestartView.selectRestart()) {
-			start();
-		}
-	}
+    public void reStart() {
+        if (BaseballRestartView.selectRestart()) {
+            start();
+        }
+    }
 }

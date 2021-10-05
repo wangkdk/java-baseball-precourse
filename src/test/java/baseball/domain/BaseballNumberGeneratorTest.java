@@ -11,27 +11,27 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class BaseballNumberGeneratorTest {
-	private List<Integer> numbers;
+    private List<Integer> numbers;
 
-	@BeforeEach
-	void setup() {
-		numbers = BaseballNumberGenerator.generateNonDuplicateNumbers();
-	}
+    @BeforeEach
+    void setup() {
+        numbers = BaseballNumberGenerator.generateNonDuplicateNumbers();
+    }
 
-	@DisplayName("생성된 숫자 사이즈 체크")
-	@Test
-	void checkNumbersSize() {
-		assertEquals(3, numbers.size());
-	}
+    @DisplayName("생성된 숫자 사이즈 체크")
+    @Test
+    void checkNumbersSize() {
+        assertEquals(3, numbers.size());
+    }
 
-	@DisplayName("생성된 숫자 중복 체크")
-	@Test
-	void checkNumbersDuplicate() {
-		assertTrue(checkNumbersForNonDuplicate());
-	}
+    @DisplayName("생성된 숫자 중복 체크")
+    @Test
+    void checkNumbersDuplicate() {
+        assertTrue(checkNumbersForNonDuplicate());
+    }
 
-	private boolean checkNumbersForNonDuplicate() {
-		Set<Integer> nonDuplicateNumbers = new HashSet<>(numbers);
-		return nonDuplicateNumbers.size() == 3;
-	}
+    private boolean checkNumbersForNonDuplicate() {
+        Set<Integer> nonDuplicateNumbers = new HashSet<>(numbers);
+        return nonDuplicateNumbers.size() == 3;
+    }
 }
