@@ -8,7 +8,7 @@ import baseball.view.BaseballRestartView;
 import baseball.view.BaseballResultView;
 
 public class BaseballController {
-	public static void start() {
+	public void start() {
 		BaseballNumber baseballNumber = BaseballNumber.create(BaseballNumberGenerator.generateNonDuplicateNumbers());
 		boolean isAnswer;
 		do {
@@ -20,7 +20,7 @@ public class BaseballController {
 		reStart();
 	}
 
-	public static void reStart() {
+	public void reStart() {
 		if (BaseballRestartView.selectRestart()) {
 			start();
 		}
