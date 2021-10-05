@@ -12,6 +12,9 @@ public class BaseballNumberValidator {
 	private static final String VALIDATE_NUMBER_MESSAGE = "[ERROR] 1 ~ 9 사이의 숫자만 입력 가능합니다.";
 	private static final Pattern BASEBALL_NUMBER_PATTERN = Pattern.compile("^[1-9]*$");
 
+	private BaseballNumberValidator() {
+	}
+
 	public static void validateNumbersSize(List<Integer> baseballNumbers) {
 		if (baseballNumbers.size() != BASEBALL_NUMBERS_SIZE) {
 			throw new IllegalArgumentException(VALIDATE_SIZE_MESSAGE);

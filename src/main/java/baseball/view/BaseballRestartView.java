@@ -16,6 +16,9 @@ public class BaseballRestartView {
 		selectOption.put("2", false);
 	}
 
+	private BaseballRestartView() {
+	}
+
 	public static boolean selectRestart() {
 		System.out.println(RESTART_INPUT_MESSAGE);
 		String inputSelect = Console.readLine();

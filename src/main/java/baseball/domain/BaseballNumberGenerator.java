@@ -12,6 +12,9 @@ public class BaseballNumberGenerator {
 	private static final int BASEBALL_NUMBER_MIN = 1;
 	private static final int BASEBALL_NUMBER_MAX = 9;
 
+	private BaseballNumberGenerator() {
+	}
+
 	public static List<Integer> generateNonDuplicateNumbers() {
 		Set<Integer> nonDuplicateNumbers = new LinkedHashSet<>();
 		while (nonDuplicateNumbers.size() < BASEBALL_NUMBERS_SIZE) {

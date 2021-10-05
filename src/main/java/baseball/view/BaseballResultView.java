@@ -3,6 +3,9 @@ package baseball.view;
 import baseball.domain.BaseballResult;
 
 public class BaseballResultView {
+	private BaseballResultView() {
+	}
+
 	public static void printMatchResult(BaseballResult result) {
 		System.out.println(result.getResultMessage());
 		if (result.isPerfect()) {
