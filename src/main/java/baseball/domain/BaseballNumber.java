@@ -17,12 +17,12 @@ public class BaseballNumber {
 	}
 
 	public static BaseballNumber create(String numbers) {
-		BaseballNumberValidator.validateOnlyNumberByOneToNine(numbers);
 		List<Integer> baseballNumbers = convertValueToBaseballNumbers(numbers);
 		return new BaseballNumber(baseballNumbers);
 	}
 
 	private static List<Integer> convertValueToBaseballNumbers(String numbers) {
+		BaseballNumberValidator.validateOnlyNumberByOneToNine(numbers);
 		List<Integer> baseballNumbers = new ArrayList<>();
 		for (int i = 0; i < numbers.length(); i++) {
 			String number = String.valueOf(numbers.charAt(i));
